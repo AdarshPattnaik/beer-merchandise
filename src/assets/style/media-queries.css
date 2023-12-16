@@ -1,0 +1,100 @@
+@media screen and (max-width:425px) {
+
+    .home-page::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url(../img/bg-secondary.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    .home-box {
+        width: 100%;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .motion-write-box,
+    .transition-write-box {
+        height: 50px;
+    }
+
+    .motion-write {
+        font-size: 35px;
+    }
+
+    .transition-write-box span {
+        font-size: 13.5px;
+    }
+
+    .home-btn {
+        font-size: 13.5px;
+        margin-top: 10px;
+    }
+
+    .single-page {
+        padding: 40px 20px;
+    }
+
+    .beer-nav-btn {
+        top: 20px;
+    }
+
+    .beer-container .beer-nav-btn {
+        top: 55px;
+        left: 15px;
+    }
+
+    .single-img {
+        width: 170px;
+        height: 250px;
+    }
+
+    .info-head {
+        font-size: 20px;
+    }
+
+    .info-box h6 {
+        font-size: 15px;
+    }
+
+    .info-line {
+        font-size: 12.5px;
+    }
+}
+
+@media screen and (max-width:320px) {
+
+    .beer-page-heading {
+        font-size: 24px;
+    }
+
+    .beer-container {
+        padding: 30px 0;
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width:300px) {
+
+    .home-box {
+        gap: 20px;
+    }
+
+    .motion-write {
+        font-size: 25px;
+    }
+
+    .transition-write-box span {
+        font-size: 11.5px;
+    }
+
+    .home-btn {
+        margin-top: 20px;
+    }
+}
