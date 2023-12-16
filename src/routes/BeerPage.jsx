@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { fetchBeers } from '../redux/actions/actions';
 import BeerCard from '../components/BeerCard';
@@ -18,9 +18,19 @@ const BeerPage = ({
     fetchBeers
 }) => {
 
+    const [searchQuery, setSearchQuery] = useState('');
+
     useEffect(() => {
         fetchBeers();
     }, [fetchBeers]);
+
+    const handleSearch = (event) => {
+        setSearchQuery(event.target.value);
+    };
+
+    const filteredBeers = beers.filter(beer =>
+        beer.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     if (loading) {
         return (
@@ -65,11 +75,20 @@ const BeerPage = ({
             <section className="beer-page d-flex flex-column align-items-center justify-content-start">
                 <h1 className="beer-page-heading ibm-plex-sans w-100 d-flex align-items-center justify-content-center text-uppercase">Merchandise</h1>
 
+                <div className="search-box d-flex align-items-center justify-content-center">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchQuery}
+                        onChange={handleSearch}
+                    />
+                </div>
+
                 <div className="beer-container w-100 d-flex align-items-center justify-content-center">
                     <BeerNavigation path="" />
                     <div className="container-fluid h-100 w-100">
                         <div className="row g-5">
-                            {beers.map((beer) => (
+                            {filteredBeers.map((beer) => (
                                 <BeerCard
                                     key={beer.id}
                                     id={beer.id}

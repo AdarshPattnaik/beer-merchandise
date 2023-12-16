@@ -170,6 +170,35 @@ a {
   padding-bottom: 40px;
 }
 
+.search-box {
+  width: 100%;
+  padding-top: 10px;
+  background-color: var(--ps-head);
+}
+
+.search-box input {
+  position: relative;
+  bottom: 10px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  width: 650px;
+  margin: 0 5px;
+  color: var(--ps-primary);
+  border-bottom: 2px solid #a70000;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.search-box input::placeholder {
+  color: #474747;
+}
+
+.search-box input:focus {
+  border-bottom: 2px solid var(--ps-temp-red);
+}
+
 /* ~~~~~ Beer Page ends ~~~~~ */
 
 /* ~~~~~ Beer Card starts ~~~~~ */
@@ -322,6 +351,7 @@ a {
   font-weight: 900;
   transition: all 0.3s;
   -webkit-transition: all 0.3s;
+  z-index: 50;
 }
 
 .beer-nav-btn:hover {
@@ -330,7 +360,7 @@ a {
 }
 
 .beer-container .beer-nav-btn {
-  top: 75px;
+  top: 115px;
   left: 20px;
 }
 
